@@ -1,0 +1,63 @@
+
+<div class="binding-container">
+  <div class="binding-card">
+
+    <div class="card-header">
+      <span class="badge">ANGULAR TUTORIAL</span>
+      <h2>Data Binding</h2>
+      <p>Learn how Angular connects data with your UI.</p>
+    </div>
+
+    <div class="content">
+      <h3>Interpolation</h3>
+      <p class="description">
+        Display dynamic data using Angular interpolation.
+      </p>
+
+      <div class="preview-box">
+        <div class="image-wrapper">
+          <img [src]="imgurl" alt="Course image">
+        </div>
+
+        <div class="course-details">
+          <label>Course Name</label>
+          <input
+            type="text"
+            [(ngModel)]="courseName"
+            
+          />
+          <p class="course-text">
+            Current Course:
+            <strong>{{ courseName }}</strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="button-section">
+        <h3>Try It Out</h3>
+        <p class="description">
+          Click the buttons to test event binding.
+        </p>
+
+        <div class="button-group">
+          <button
+            class="btn btn-primary"
+            (click)="sayHello('Zain')">
+            Say Hello
+          </button>
+
+          <button
+            class="btn btn-secondary"
+            (click)="changeCourse('react')">
+            Change Course
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      Powered by Angular
+    </div>
+
+  </div>
+</div>

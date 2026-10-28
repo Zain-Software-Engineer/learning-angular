@@ -1,0 +1,65 @@
+
+<div class="page-container">
+
+  <div class="card visibility-card" *ngIf="isDev1Visible">
+    <div class="icon">👋</div>
+    <h2>Hello, Welcome!</h2>
+    <p id="div1">Div 1 is currently visible.</p>
+    <span class="status">Visible</span>
+  </div>
+
+  <div class="button-group">
+    <button class="btn btn-show" (click)="showDiv1()">
+      Show Div One
+    </button>
+
+    <button class="btn btn-hide" (click)="hideDiv1()">
+      Hide Div One
+    </button>
+  </div>
+
+  <div class="card calculator-card">
+    <div class="card-header">
+      <div class="icon">🔢</div>
+      <div>
+        <h2>Number Comparator</h2>
+        <p>Enter two numbers to compare them.</p>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="num1">Enter Number 1</label>
+      <input
+        id="num1"
+        type="number"
+        placeholder="Enter first number"
+        [(ngModel)]="num1"
+      />
+    </div>
+
+    <div class="input-group">
+      <label for="num2">Enter Number 2</label>
+      <input
+        id="num2"
+        type="number"
+        placeholder="Enter second number"
+        [(ngModel)]="num2"
+      />
+    </div>
+
+ <div class="result-box" *ngIf="num1 != null && num2 != null">
+      <div class="result-label">Comparison Result</div>
+
+      <p *ngIf="+num1 > +num2">
+        <strong>{{num1}}</strong> is greater than
+        <strong>{{num2}}</strong>
+      </p>
+
+      <p *ngIf="+num1 <= +num2">
+        <strong>{{num1}}</strong> is less than or equal to
+        <strong>{{num2}}</strong>
+      </p>
+    </div>
+  </div>
+
+</div>

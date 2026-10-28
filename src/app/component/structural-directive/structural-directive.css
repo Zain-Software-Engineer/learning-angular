@@ -1,0 +1,183 @@
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #f3f6fc;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.page-container {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(31, 45, 80, 0.08);
+  margin-bottom: 24px;
+  border: 1px solid #e9edf5;
+}
+
+.visibility-card {
+  text-align: center;
+  border-top: 4px solid #6366f1;
+}
+
+.icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+h2 {
+  color: #172554;
+  font-size: 23px;
+  margin: 0 0 10px;
+}
+
+p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.status {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #dcfce7;
+  color: #15803d;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.button-group {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  flex: 1;
+  border: none;
+  padding: 14px 18px;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.95);
+}
+
+.btn-show {
+  background: #4f46e5;
+}
+
+.btn-hide {
+  background: #ef4444;
+}
+
+.calculator-card {
+  border-top: 4px solid #06b6d4;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.card-header .icon {
+  background: #cffafe;
+  padding: 12px;
+  border-radius: 12px;
+  margin: 0;
+}
+
+.card-header p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 15px;
+  background: #f8fafc;
+  transition: 0.2s;
+}
+
+.input-group input:focus {
+  border-color: #06b6d4;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.12);
+}
+
+.result-box {
+  background: #ecfeff;
+  border: 1px solid #a5f3fc;
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 26px;
+}
+
+.result-label {
+  color: #0e7490;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.result-box p {
+  color: #155e75;
+  margin-bottom: 0;
+  overflow-wrap: anywhere;
+}
+
+.result-box strong {
+  color: #0e7490;
+}
+
+@media (max-width: 480px) {
+  :host {
+    padding: 24px 14px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
