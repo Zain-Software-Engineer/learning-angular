@@ -1,0 +1,53 @@
+
+<div class="container">
+
+  <div class="header">
+    <div>
+      <h2>Student Management</h2>
+      <p>Here is your complete student list</p>
+    </div>
+
+    <div class="total">
+      Total Students: {{ studentsList.length }}
+    </div>
+  </div>
+
+  <div class="table-card">
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Student Name</th>
+          <th>City</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let std of studentsList">
+
+          <td>{{ std.std_id }}</td>
+
+          <td class="name">
+            {{ std.std_name }}
+          </td>
+
+          <td>{{ std.std_city }}</td>
+
+          <td>
+            <span *ngIf="std.isActive" class="active">
+              Active
+            </span>
+
+            <span *ngIf="!std.isActive" class="inactive">
+              Inactive
+            </span>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

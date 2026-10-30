@@ -10,6 +10,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class StructuralDirective {
   isDev1Visible : boolean = true;
+  num1 : number = 1;
+  num2 : number = 22;
+  cities: string[] = ["karachi", "lahore", "islamabad"]
 
   showDiv1() : void {
     this.isDev1Visible = true;
@@ -18,6 +21,4 @@ export class StructuralDirective {
     this.isDev1Visible = false;
   }
 
-  num1 : number = 1;
-  num2 : number = 22;
 }
