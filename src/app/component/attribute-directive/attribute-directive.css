@@ -1,0 +1,46 @@
+/* Background gradient for the whole page */
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #f4f7f6;
+  padding: 20px;
+}
+
+/* Wrapper card for the demo */
+.demo-card {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Target Box to change color */
+.color-box {
+  height: 200px;
+  width: 100%;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  /* Smooth transition jab color change hoga */
+  transition: all 0.4s ease-in-out; 
+}
+
+/* Buttons styling */
+.btn {
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Dropdown text color adjust */
+.card-header h3 {
+  color: #1e293b;
+  font-weight: 700;
+}

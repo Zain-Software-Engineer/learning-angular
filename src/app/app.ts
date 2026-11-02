@@ -6,9 +6,10 @@ import { Home } from './component/home/home';
 import { DataBinding } from './component/data-binding/data-binding';
 import { StructuralDirective } from './component/structural-directive/structural-directive';
 import { StudentTable } from './component/student-table/student-table';
+import { AttributeDirective } from './component/attribute-directive/attribute-directive';
 
 @Component({
-  imports: [RouterOutlet, AddEmployee, EmployeeList,Home, DataBinding, StructuralDirective, StudentTable],
+  imports: [RouterOutlet, AddEmployee, EmployeeList,Home, DataBinding, StructuralDirective, StudentTable, AttributeDirective],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',

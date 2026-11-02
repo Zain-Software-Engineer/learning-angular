@@ -1,183 +1,243 @@
-
-:host {
-  display: block;
-  min-height: 100vh;
-  background: #f3f6fc;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 40px 20px;
+/* ============== GLOBAL SETTINGS ============== */
+* {
   box-sizing: border-box;
 }
 
 .page-container {
   max-width: 650px;
-  margin: 0 auto;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: #f8fafc; /* Halka grey background */
+  border-radius: 16px;
 }
 
+/* ============== COMMON CARD STYLES ============== */
 .card {
   background: #ffffff;
-  padding: 28px;
-  border-radius: 18px;
-  box-shadow: 0 8px 30px rgba(31, 45, 80, 0.08);
-  margin-bottom: 24px;
-  border: 1px solid #e9edf5;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.visibility-card {
-  text-align: center;
-  border-top: 4px solid #6366f1;
-}
-
-.icon {
-  font-size: 32px;
-  margin-bottom: 12px;
-}
-
-h2 {
-  color: #172554;
-  font-size: 23px;
-  margin: 0 0 10px;
-}
-
-p {
-  color: #64748b;
-  line-height: 1.6;
-}
-
-.status {
-  display: inline-block;
-  padding: 6px 14px;
-  background: #dcfce7;
-  color: #15803d;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 600;
-  margin-top: 5px;
-}
-
-.button-group {
-  display: flex;
-  gap: 14px;
-  margin-bottom: 24px;
-}
-
-.btn {
-  flex: 1;
-  border: none;
-  padding: 14px 18px;
-  border-radius: 10px;
-  color: white;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.btn:hover {
+.card:hover {
   transform: translateY(-2px);
-  filter: brightness(0.95);
-}
-
-.btn-show {
-  background: #4f46e5;
-}
-
-.btn-hide {
-  background: #ef4444;
-}
-
-.calculator-card {
-  border-top: 4px solid #06b6d4;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
 .card-header {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
-.card-header .icon {
-  background: #cffafe;
-  padding: 12px;
-  border-radius: 12px;
+.card-header h2 {
   margin: 0;
+  font-size: 1.25rem;
+  color: #1e293b;
+  font-weight: 700;
 }
 
 .card-header p {
-  margin: 0;
-  font-size: 14px;
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.icon-wrapper {
+  font-size: 1.5rem;
+  background: #f1f5f9;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+/* ============== VISIBILITY CARD ============== */
+.visibility-card {
+  text-align: center;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: white;
+  border: none;
+}
+
+.visibility-card .icon-wrapper {
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 auto 10px;
+}
+
+.visibility-card h2 {
+  margin: 10px 0 5px;
+  font-size: 1.5rem;
+}
+
+.visibility-card p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.status-badge {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 6px 16px;
+  background: #22c55e;
+  color: white;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(34, 197, 94, 0.4);
+}
+
+/* ============== BUTTONS ============== */
+.button-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+}
+
+.btn-show {
+  background: #22c55e;
+  color: white;
+}
+.btn-show:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+}
+
+.btn-hide {
+  background: #ef4444;
+  color: white;
+}
+.btn-hide:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+/* ============== INPUTS & SELECT ============== */
+.input-row {
+  display: flex;
+  gap: 16px;
 }
 
 .input-group {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  flex: 1;
 }
 
 .input-group label {
   display: block;
-  color: #334155;
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: 600;
-  margin-bottom: 9px;
+  color: #475569;
+  margin-bottom: 8px;
 }
 
-.input-group input {
+.input-group input,
+.input-group select {
   width: 100%;
-  padding: 14px;
-  border: 1px solid #cbd5e1;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
   border-radius: 10px;
-  box-sizing: border-box;
+  font-size: 1rem;
   outline: none;
-  font-size: 15px;
   background: #f8fafc;
-  transition: 0.2s;
+  transition: all 0.2s ease;
+  color: #1e293b;
 }
 
-.input-group input:focus {
-  border-color: #06b6d4;
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #6366f1;
   background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.12);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
 }
 
+/* ============== RESULT BOX ============== */
 .result-box {
-  background: #ecfeff;
-  border: 1px solid #a5f3fc;
-  border-radius: 12px;
-  padding: 18px;
-  margin-top: 26px;
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-left: 5px solid #22c55e;
+  border-radius: 10px;
 }
 
 .result-label {
-  color: #0e7490;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  color: #16a34a;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
 }
 
 .result-box p {
-  color: #155e75;
-  margin-bottom: 0;
-  overflow-wrap: anywhere;
+  margin: 0;
+  color: #1e293b;
+  font-size: 1.05rem;
 }
 
-.result-box strong {
-  color: #0e7490;
+/* ============== CITY LIST ============== */
+.city-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
 }
 
-@media (max-width: 480px) {
-  :host {
-    padding: 24px 14px;
-  }
-
-  .card {
-    padding: 20px;
-  }
-
-  .button-group {
-    flex-direction: column;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
+.city-list li {
+  background: #f1f5f9;
+  color: #334155;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
 }
+
+.city-list li:hover {
+  background: #e0e7ff;
+  color: #4338ca;
+  border-color: #c7d2fe;
+}
+
+/* ============== SEMESTER BADGES ============== */
+.switch-content .badge {
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin: 0;
+  font-weight: 500;
+  font-size: 1rem;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  line-height: 1.5;
+}
+
+.badge.cpism { background: linear-gradient(135deg, #6366f1, #4f46e5); }
+.badge.dism  { background: linear-gradient(135deg, #0ea5e9, #0284c7); }
+.badge.hdse1 { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.badge.hdse2 { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+.badge.adse1 { background: linear-gradient(135deg, #ec4899, #db2777); }
+.badge.adse2 { background: linear-gradient(135deg, #10b981, #059669); }
+.badge.invalid { background: linear-gradient(135deg, #ef4444, #dc2626); }
