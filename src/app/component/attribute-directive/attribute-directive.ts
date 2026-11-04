@@ -1,14 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   selector: 'app-attribute-directive',
   styleUrl: './attribute-directive.css',
   templateUrl: './attribute-directive.html',
 })
 export class AttributeDirective {
   div1BgColor : string = "bg-primary"
+    num1 : number = 1;
+    num2 : number = 22;
 
   bgRed():void{
     this.div1BgColor = "bg-danger"
@@ -27,4 +30,5 @@ export class AttributeDirective {
     this.div1BgColor = "bg-primary"
   }
   }
+  
 }

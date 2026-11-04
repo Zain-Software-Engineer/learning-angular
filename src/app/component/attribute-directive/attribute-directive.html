@@ -1,24 +1,104 @@
+
 <div class="container mt-5">
+
+  <!-- First Section: Attribute Directive -->
   <div class="demo-card">
-    
+
     <div class="card-header text-center mb-4">
       <h3>Attribute Directive Demo</h3>
-      <p class="text-muted">Click the buttons below to change the background color.</p>
+      <p class="text-muted">
+        Click the buttons below to change the background color.
+      </p>
     </div>
 
-    <!-- Target Div with dynamic class -->
-    <div 
-      [ngClass]="div1BgColor" 
+    <div
+      [ngClass]="div1BgColor"
       class="color-box d-flex align-items-center justify-content-center rounded shadow-sm text-white">
+
       <h2 class="m-0 fw-bold">Div 1</h2>
+
     </div>
 
     <!-- Buttons -->
-    <div class="button-group d-flex gap-3 mt-4 justify-content-center">
-      <button class="btn btn-danger px-4" (click)="bgRed()">🔴 Red</button>
-      <button class="btn btn-primary px-4" (click)="bgblue()">🔵 Blue</button>
-      <button class="btn btn-dark px-4" (click)="toggle()">🔄 Toggle</button>
+    <div class="button-group d-flex gap-3 mt-4 justify-content-center flex-wrap">
+
+      <button class="btn btn-danger px-4" (click)="bgRed()">
+        🔴 Red
+      </button>
+
+      <button class="btn btn-primary px-4" (click)="bgblue()">
+        🔵 Blue
+      </button>
+
+      <button class="btn btn-dark px-4" (click)="toggle()">
+        🔄 Toggle
+      </button>
+
+    </div>
+<div
+      [ngClass]="num1 > num2 ? 'bg-primary' : 'bg-danger'"
+      class="color-box d-flex align-items-center justify-content-center rounded shadow-sm text-white">
+
+      <h2 class="m-0 fw-bold">Div 1</h2>
+
+    </div>
+    <!-- Second Section: Number Comparator -->
+    <div class="number-card mt-5">
+
+      <div class="number-header">
+        <div class="icon-wrapper">🔢</div>
+
+        <div>
+          <h2>Number Comparator</h2>
+          <p>Enter two numbers to compare them.</p>
+        </div>
+      </div>
+
+      <div class="input-row">
+
+        <div class="input-group">
+          <label for="num1">Enter Number 1</label>
+          <input
+            id="num1"
+            type="number"
+            placeholder="e.g. 10"
+            [(ngModel)]="num1" />
+        </div>
+
+        <div class="input-group">
+          <label for="num2">Enter Number 2</label>
+          <input
+            id="num2"
+            type="number"
+            placeholder="e.g. 20"
+            [(ngModel)]="num2" />
+        </div>
+
+      </div>
+
+      <div class="result-box" *ngIf="num1 !== null && num2 !== null">
+
+        <div class="result-label">Comparison Result</div>
+
+        <p *ngIf="num1 > num2">
+          <strong>{{num1}}</strong> is greater than
+          <strong>{{num2}}</strong> 🎉
+        </p>
+
+        <p *ngIf="num1 === num2">
+          <strong>{{num1}}</strong> is equal to
+          <strong>{{num2}}</strong> ⚖️
+        </p>
+
+        <p *ngIf="num1 < num2">
+          <strong>{{num1}}</strong> is less than
+          <strong>{{num2}}</strong> 📉
+        </p>
+
+      </div>
+
     </div>
 
   </div>
+
 </div>

@@ -21,6 +21,7 @@
           <th>Student Name</th>
           <th>City</th>
           <th>Status</th>
+          <th>Percentage</th>
         </tr>
       </thead>
 
@@ -36,7 +37,7 @@
           <td>{{ std.std_city }}</td>
 
           <td>
-            <span *ngIf="std.isActive" class="active">
+            <span *ngIf="std.isActive"  class="active">
               Active
             </span>
 
@@ -44,7 +45,34 @@
               Inactive
             </span>
           </td>
+            <td>
+  <div
+    [ngStyle]="{
+      'background-color': '#e9ecef',
+      'width': '100%',
+      'height': '22px',
+      'border-radius': '20px',
+      'overflow': 'hidden'
+    }">
 
+    <div
+      [ngStyle]="{
+        'background': 'linear-gradient(90deg, #667eea, #764ba2)',
+        'width': std.percentage + '%',
+        'height': '100%',
+        'border-radius': '20px',
+        'text-align': 'center',
+        'color': 'white',
+        'font-size': '12px',
+        'font-weight': 'bold',
+        'line-height': '22px',
+        'transition': 'width 0.5s ease'
+      }">
+      {{std.percentage}}%
+    </div>
+
+  </div>
+</td>
         </tr>
       </tbody>
     </table>
