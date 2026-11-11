@@ -1,0 +1,10 @@
+<mat-form-field>
+  <mat-label >Input</mat-label>
+  <input matInput [(ngModel)]="task">
+</mat-form-field>
+<section>
+  <div class="example-label">Filled</div>
+  <div class="example-button-row">
+    <button matButton="filled" (click)="addTask()">Add</button>
+  </div>
+</section>
