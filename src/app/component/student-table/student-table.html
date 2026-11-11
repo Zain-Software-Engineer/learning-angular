@@ -1,0 +1,81 @@
+
+<div class="container">
+
+  <div class="header">
+    <div>
+      <h2>Student Management</h2>
+      <p>Here is your complete student list</p>
+    </div>
+
+    <div class="total">
+      Total Students: {{ studentsList.length }}
+    </div>
+  </div>
+
+  <div class="table-card">
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Student Name</th>
+          <th>City</th>
+          <th>Status</th>
+          <th>Percentage</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let std of studentsList">
+
+          <td>{{ std.std_id }}</td>
+
+          <td class="name">
+            {{ std.std_name }}
+          </td>
+
+          <td>{{ std.std_city }}</td>
+
+          <td>
+            <span *ngIf="std.isActive"  class="active">
+              Active
+            </span>
+
+            <span *ngIf="!std.isActive" class="inactive">
+              Inactive
+            </span>
+          </td>
+            <td>
+  <div
+    [ngStyle]="{
+      'background-color': '#e9ecef',
+      'width': '100%',
+      'height': '22px',
+      'border-radius': '20px',
+      'overflow': 'hidden'
+    }">
+
+    <div
+      [ngStyle]="{
+        'background': 'linear-gradient(90deg, #667eea, #764ba2)',
+        'width': std.percentage + '%',
+        'height': '100%',
+        'border-radius': '20px',
+        'text-align': 'center',
+        'color': 'white',
+        'font-size': '12px',
+        'font-weight': 'bold',
+        'line-height': '22px',
+        'transition': 'width 0.5s ease'
+      }">
+      {{std.percentage}}%
+    </div>
+
+  </div>
+</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

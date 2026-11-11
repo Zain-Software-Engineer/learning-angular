@@ -1,0 +1,166 @@
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  padding: 30px 15px;
+}
+
+/* Main Demo Card */
+.demo-card {
+  max-width: 650px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 40px 35px;
+  border-radius: 22px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
+}
+
+/* Heading */
+.card-header h3 {
+  color: #1e293b;
+  font-weight: 800;
+}
+
+.card-header p {
+  color: #64748b;
+}
+
+/* Color Box */
+.color-box {
+  height: 200px;
+  width: 100%;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Buttons */
+.btn {
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Number Comparator Card */
+.number-card {
+  background: linear-gradient(135deg, #f0f4ff, #e8edff);
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid #dbe4ff;
+  box-shadow: 0 8px 22px rgba(45, 65, 120, 0.08);
+}
+
+/* Number Header */
+.number-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.number-header h2 {
+  font-size: 23px;
+  font-weight: 800;
+  color: #26356b;
+  margin: 0;
+}
+
+.number-header p {
+  color: #64748b;
+  margin: 5px 0 0;
+}
+
+.icon-wrapper {
+  background: #ffffff;
+  width: 55px;
+  height: 55px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 27px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Inputs */
+.input-row {
+  display: flex;
+  gap: 15px;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-weight: 700;
+  color: #334155;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  background: #ffffff;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* Result Box */
+.result-box {
+  margin-top: 25px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  border-left: 5px solid #6366f1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.result-label {
+  color: #6366f1;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.result-box p {
+  margin: 0;
+  color: #26356b;
+  font-size: 17px;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .demo-card {
+    padding: 25px 18px;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  .number-card {
+    padding: 20px 15px;
+  }
+
+  .number-header h2 {
+    font-size: 19px;
+  }
+}

@@ -1,0 +1,96 @@
+<div class="page-container">
+
+  <!-- ================= VISIBILITY CARD ================= -->
+  <div class="card visibility-card" *ngIf="isDev1Visible">
+    <div class="icon-wrapper">👋</div>
+    <h2>Hello, Welcome!</h2>
+    <p id="div1">Div 1 is currently visible.</p>
+    <span class="status-badge">Visible</span>
+  </div>
+  <div *ngIf="isDiv1Hidden">hidden</div>
+
+  <div class="button-group">
+    <button class="btn btn-show" (click)="showDiv1()">Show Div One</button>
+    <button class="btn btn-hide" (click)="hideDiv1()">Hide Div One</button>
+  </div>
+
+  <!-- ================= NUMBER COMPARATOR ================= -->
+  <div class="card">
+    <div class="card-header">
+      <div class="icon-wrapper">🔢</div>
+      <div>
+        <h2>Number Comparator</h2>
+        <p>Enter two numbers to compare them.</p>
+      </div>
+    </div>
+
+    <div class="input-row">
+      <div class="input-group">
+        <label for="num1">Enter Number 1</label>
+        <input id="num1" type="number" placeholder="e.g. 10" [(ngModel)]="num1" />
+      </div>
+
+      <div class="input-group">
+        <label for="num2">Enter Number 2</label>
+        <input id="num2" type="number" placeholder="e.g. 20" [(ngModel)]="num2" />
+      </div>
+    </div>
+
+    <div class="result-box" *ngIf="num1 !== null && num2 !== null">
+      <div class="result-label">Comparison Result</div>
+
+      <p *ngIf="num1 > num2">
+        <strong>{{ num1 }}</strong> is greater than <strong>{{ num2 }}</strong>
+      </p>
+      <p *ngIf="num1 === num2">
+        <strong>{{ num1 }}</strong> is equal to <strong>{{ num2 }}</strong>
+      </p>
+      <p *ngIf="num1 < num2">
+        <strong>{{ num1 }}</strong> is less than <strong>{{ num2 }}</strong>
+      </p>
+    </div>
+  </div>
+
+  <!-- ================= CITIES LIST ================= -->
+  <div class="card">
+    <div class="card-header">
+      <div class="icon-wrapper">🏙️</div>
+      <div>
+        <h2>Cities List</h2>
+        <p>Rendered using *ngFor</p>
+      </div>
+    </div>
+    <ul class="city-list">
+      <li *ngFor="let city of cities">{{ city | titlecase }}</li>
+    </ul>
+  </div>
+
+  <!-- ================= SEMESTER SWITCH ================= -->
+  <div class="card">
+    <div class="card-header">
+      <div class="icon-wrapper">🎓</div>
+      <div>
+        <h2>Semester Course</h2>
+        <p>Selected Semester: <strong>{{ currentSem }}</strong></p>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="sem">Change Semester</label>
+      <select id="sem" [(ngModel)]="currentSem">
+        <option *ngFor="let s of semArr" [value]="s">{{ s }}</option>
+      </select>
+    </div>
+
+    <div [ngSwitch]="currentSem" class="switch-content">
+      <p *ngSwitchCase="'CPISM'" class="badge cpism">You will learn: Web Designing</p>
+      <p *ngSwitchCase="'DISM'" class="badge dism">You will learn: Dynamic Application Development with PHP/MySQL</p>
+      <p *ngSwitchCase="'HDSE-I'" class="badge hdse1">You will learn: Dynamic Application Development with ASP.NET & SQL Server</p>
+      <p *ngSwitchCase="'HDSE-II'" class="badge hdse2">You will learn: Dynamic Application Development with MERN</p>
+      <p *ngSwitchCase="'ADSE-I'" class="badge adse1">You will learn: Mobile Application Development with Flutter & Dart</p>
+      <p *ngSwitchCase="'ADSE-II'" class="badge adse2">You will learn: Data Science & AI</p>
+      <p *ngSwitchDefault class="badge invalid">Invalid Sem selected</p>
+    </div>
+  </div>
+
+</div>

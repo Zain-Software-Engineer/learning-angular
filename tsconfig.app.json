@@ -3,7 +3,13 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+<<<<<<< HEAD
     "types": []
+=======
+    "types": [
+      "node"
+    ]
+>>>>>>> origin/main
   },
   "include": [
     "src/**/*.ts"
