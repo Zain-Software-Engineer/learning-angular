@@ -19,6 +19,10 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
+<<<<<<< HEAD
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, app');
+=======
     expect(compiled.querySelector('h1')?.textContent).toContain('Hello, myapp');
+>>>>>>> origin/main
   });
 });

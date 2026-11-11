@@ -6,7 +6,11 @@
   },
   "newProjectRoot": "projects",
   "projects": {
+<<<<<<< HEAD
+    "app": {
+=======
     "myapp": {
+>>>>>>> origin/main
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -24,6 +28,9 @@
                 "input": "public"
               }
             ],
+<<<<<<< HEAD
+            "styles": ["src/material-theme.scss", "src/styles.css"]
+=======
             "styles": [
               "src/styles.css"
             ],
@@ -35,6 +42,7 @@
             "ssr": {
               "entry": "src/server.ts"
             }
+>>>>>>> origin/main
           },
           "configurations": {
             "production": {
@@ -64,10 +72,17 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
+<<<<<<< HEAD
+              "buildTarget": "app:build:production"
+            },
+            "development": {
+              "buildTarget": "app:build:development"
+=======
               "buildTarget": "myapp:build:production"
             },
             "development": {
               "buildTarget": "myapp:build:development"
+>>>>>>> origin/main
             }
           },
           "defaultConfiguration": "development"
